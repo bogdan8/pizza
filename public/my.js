@@ -7,6 +7,6 @@ function sumfing(){
 
 	alert(x);
 }
-function add_to_cart(){
-	alert('hello from function');
+function add_to_cart(id){
+	alert('you anded pizza with id:' + id);
 }

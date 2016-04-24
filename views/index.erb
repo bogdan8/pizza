@@ -7,8 +7,20 @@
 			<p>Розмір: <%= item[:size] %>см</p>
 			<p>Ціна: <%= item[:price] %>грн</p>
 			<p>
-				<button class="btn btn-sm btn-success" onclick="add_to_cart(<%= item[:id] %>)">Додати в корзину</button>
-				<button class="btn btn-sm btn-success" onclick="clear_local()">Очистити корзину</button>
+				<div class="row">
+					<div class="col-lg-1">
+						<button class="btn btn-sm btn-success" onclick="add_to_cart(<%= item[:id] %>)">+</button>
+					</div>
+					<div class="col-lg-1">
+						<h4 style="margin: 5px 8px;" id="count<%= item[:id] %>"></h4>
+					</div>
+					<div class="col-lg-1">
+						<button class="btn btn-sm btn-danger" onclick="delete_to_cart(<%= item[:id] %>)">-</button>
+					</div>
+					<div class="col-lg-9">
+						<button class="btn btn-sm btn-success" onclick="clear_local()">Очистити корзину</button>
+					</div>
+				</div>
 			</p>
 			<br />
 			<img width="100%" height="300px" src="<%= item[:path_to_image] %>"/>

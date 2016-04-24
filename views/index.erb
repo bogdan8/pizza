@@ -4,9 +4,11 @@
 		<div class="col-lg-4 col-md-4">
 			<p>Назва: <%= item[:title] %></p>
 			<p>Опис: <%= item[:description] %></p>
-			<p>Ціна: <%= item[:price] %></p>
-			<p>Розмір: <%= item[:size] %></p>
-			<p><button class="btn btn-info" onclick="sumfing()">Додати в корзину</button></p>
+			<p>Розмір: <%= item[:size] %>см</p>
+			<p>Ціна: <%= item[:price] %>грн</p>
+			<p>
+				<button class="btn btn-sm btn-success" onclick="add_to_cart()">Додати в корзину</button>
+			</p>
 			<br />
 			<img width="100%" height="300px" src="<%= item[:path_to_image] %>"/>
 		</div>

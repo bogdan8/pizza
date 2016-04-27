@@ -50,6 +50,8 @@ function update_orders(){
 	document.getElementById('orders_input').value = orders;
 }
 
+
+
 function get_orders(){
 	var orders = '';
 	for (var i = 0; i < window.localStorage.length; i++) {

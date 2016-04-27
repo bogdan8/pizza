@@ -5,6 +5,7 @@ function add_to_cart(id){
 	window.localStorage.setItem(name , x);
 	document.getElementById("count" + id).innerHTML = x;
 	document.getElementById("count").innerHTML = get_count_items();
+	update_orders();
 }
 
 function delete_to_cart(id){
@@ -20,6 +21,7 @@ function delete_to_cart(id){
 		window.localStorage.setItem(name , x);
 		document.getElementById("count" + id).innerHTML = x;
 		document.getElementById("count").innerHTML = get_count_items();
+		update_orders();
 	}
 }
 
@@ -40,4 +42,23 @@ function get_count_items(){
 		}
 	}
 	return cnt;
+}
+
+function update_orders(){
+	var orders = get_orders();
+	console.log(orders);
+	document.getElementById('orders_input').value = orders;
+}
+
+function get_orders(){
+	var orders = '';
+	for (var i = 0; i < window.localStorage.length; i++) {
+		var key = window.localStorage.key(i);//ключ
+		var value = window.localStorage.getItem(key);//значення
+
+		if(key.indexOf('product_') == 0){
+			orders = orders + key + '=' + value + ',';
+		}
+	}
+	return orders;
 }

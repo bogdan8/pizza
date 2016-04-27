@@ -1,3 +1,27 @@
+<div style="position:absolute;right:0px;">
+	<div>
+		<button class="btn btn-sm btn-danger" onclick="clear_local()">
+		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		Очистити корзину
+		</button>
+	</div>
+	<div>
+		<p class="btn btn-sm btn-default">
+		<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+		Кількість піц: <b id="count"></b>
+		</p>
+	</div>
+	<div>
+	<form method="POST" action="/cart">
+		<input name="orders" type="text" size="13"></input>
+		<br>
+		<button type="submit" class="btn btn-sm btn-success">
+		<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+		Замовити піци
+		</button>
+	</form>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
 	<% @product.each do |item| %>
@@ -12,13 +36,10 @@
 						<button class="btn btn-sm btn-success" onclick="add_to_cart(<%= item[:id] %>)">+</button>
 					</div>
 					<div class="col-lg-1">
-						<h4 style="margin: 5px 8px;" id="count<%= item[:id] %>"></h4>
+						<h4 style="margin: 5px 8px;" id="count<%= item[:id] %>">0</h4>
 					</div>
 					<div class="col-lg-1">
 						<button class="btn btn-sm btn-danger" onclick="delete_to_cart(<%= item[:id] %>)">-</button>
-					</div>
-					<div class="col-lg-9">
-						<button class="btn btn-sm btn-success" onclick="clear_local()">Очистити корзину</button>
 					</div>
 				</div>
 			</p>

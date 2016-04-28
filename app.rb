@@ -35,6 +35,12 @@ post '/cart' do
 	erb :cart
 end
 
+post 'place_order' do
+
+
+
+end
+
 def perse_orders_input orders_input
 	s1 = orders_input.split(/,/)
 	arr = []

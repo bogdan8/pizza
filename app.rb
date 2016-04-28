@@ -13,7 +13,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Product < ActiveRecord::Base
-
 end
 
 get '/' do
@@ -27,7 +26,11 @@ end
 
 post '/cart' do
 	orders_input = params[:orders]
-	@orders = perse_orders_input orders_input
+	@items = perse_orders_input orders_input
+
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end
 
 	erb :cart
 end
@@ -44,6 +47,6 @@ def perse_orders_input orders_input
 		arr2 = [id,cnt]
 		arr.push arr2
 	end
-	
+
 	return arr
 end

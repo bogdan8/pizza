@@ -1,1 +1,33 @@
-<%= @orders %>
+<table class="table table-striped">
+	<thead>	
+		<tr>
+			<th>Імя</th>
+			<th>Опис</th>
+			<th>Розмір</th>
+			<th>Ціна</th>
+			<th>Кількість</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% total_price = 0 %>
+	<% total_pizza = 0 %>
+	<% @items.each do |item| %>
+		<tr>
+			<td><%= item[0].title %></td>
+			<td><%= item[0].description %></td>
+			<td><%= item[0].size %></td>
+			<td><%= item[0].price %></td>
+			<td><%= item[1] %></td>
+		</tr>
+		<% total_price += item[0].price.to_i %>
+		<% total_pizza += item[1].to_i %>
+	<% end %>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Загальна ціна <%= total_price %>.грн</td>
+		<td>Кількість піц <%= total_pizza %></td>
+	</tr>
+	</tbody>
+</table>

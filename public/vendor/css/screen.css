@@ -1,26 +1,16 @@
-/* line 3, ../sass/screen.scss */
-a {
-  color: red;
-}
-
-/* line 7, ../sass/screen.scss */
-b {
-  color: red;
-}
-
-/* line 12, ../sass/screen.scss */
+/* line 2, ../sass/screen.sass */
 a {
   color: blue;
 }
-/* line 14, ../sass/screen.scss */
+/* line 4, ../sass/screen.sass */
 a:visited {
   color: red;
 }
-/* line 17, ../sass/screen.scss */
+/* line 6, ../sass/screen.sass */
 a:hover {
   color: green;
 }
-/* line 20, ../sass/screen.scss */
+/* line 8, ../sass/screen.sass */
 a:active {
   color: yellow;
 }

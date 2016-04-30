@@ -35,10 +35,9 @@ post '/cart' do
 	erb :cart
 end
 
-post 'place_order' do
+post '/place_order' do 
 
-
-
+	erb 
 end
 
 def perse_orders_input orders_input

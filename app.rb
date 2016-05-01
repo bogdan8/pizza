@@ -44,6 +44,15 @@ post '/place_order' do
 	erb :order_placed
 end
 
+get '/admin_new' do 
+	erb :admin_new
+end
+
+post '/admin_new' do
+	@product = Product.create params[:product]
+	erb "Дякуєм за замовлення"
+end
+
 def perse_orders_input orders_input
 	s1 = orders_input.split(/,/)
 	arr = []

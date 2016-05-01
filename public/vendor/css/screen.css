@@ -1,16 +1,4 @@
-/* line 2, ../sass/screen.sass */
-a {
-  color: blue;
-}
-/* line 4, ../sass/screen.sass */
-a:visited {
-  color: red;
-}
-/* line 6, ../sass/screen.sass */
-a:hover {
-  color: green;
-}
-/* line 8, ../sass/screen.sass */
-a:active {
-  color: yellow;
-}
+/* line 4, ../sass/screen.scss */
+.table-column td { text-align: center; }
+/* line 7, ../sass/screen.scss */
+.table-column th { text-align: center; }

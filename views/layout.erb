@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Sinatra + Twitter Bootstrap</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- Bootstrap -->
-		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<script src="/vendor/jquery-1.9.1.min.js"></script>
-		<script src="/my.js"></script>
-		<link href="/vendor/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<div class="container">
+<head>
+  <title>Sinatra + Twitter Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/vendor/jquery-1.9.1.min.js"></script>
+  <script src="/my.js"></script>
+  <link href="/vendor/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
 
-			<!-- Static navbar -->
-			<nav class="navbar navbar-default" role="navigation">
-			  <div class="navbar-header">
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			      <span class="sr-only">Toggle navigation</span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="/">Магазин піци</a>
-			  </div>
-			  <div class="navbar-collapse collapse">
-			    <ul class="nav navbar-nav">
-			      <li><a href="/">Головна</a></li>
-			      <li><a href="/admin_new">Додати піцу</a></li>
-			    </ul>
-			  </div><!--/.nav-collapse -->
-			</nav>
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Магазин піци</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Головна</a></li>
+        <li><a href="/admin_new">Додати піцу</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </nav>
 
-			<div>
-			      <%if @error && @error.length > 0 then %>
-			          <div class="alert alert-danger"><%=@error%></div>
-			      <% end %>
-			      <%= yield %>
-			</div>
+  <div>
+    <% if @error && @error.length > 0 then %>
+        <div class="alert alert-danger"><%= @error %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 
-	</div>
-	<script type="text/javascript">
-		$(function(){
-			update_orders();
-			document.getElementById("count").innerHTML = get_count_items();
-			for(var i = 1; i <= 3; i++){
-				var name = 'product_' + i;
-				var x = window.localStorage.getItem(name);
-				document.getElementById("count" + i).innerHTML = x;
-			}
-		});
-	</script>
-  </body>
+</div>
+<script type="text/javascript">
+    $(function () {
+        update_orders();
+        document.getElementById("count").innerHTML = get_count_items();
+        (function () {
+            var td = '';
+            for (var i in localStorage) if (typeof localStorage[i] == 'string') td += i;
+            var ln = td.length;
+            var a = td.substring(ln - 1);
+
+            for (var i = 1; i <= a; i++) {
+                var name = 'product_' + i;
+                var x = window.localStorage.getItem(name);
+                document.getElementById("count" + i).innerHTML = x;
+            }
+        })();
+    });
+</script>
+</body>
 </html>

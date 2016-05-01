@@ -15,6 +15,9 @@ ActiveRecord::Base.establish_connection(
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
+
 get '/' do
 	@product = Product.all
 	erb :index	
@@ -36,8 +39,9 @@ post '/cart' do
 end
 
 post '/place_order' do 
-
-	erb 
+	@order = Order.create params[:order]
+	
+	erb :order_placed
 end
 
 def perse_orders_input orders_input

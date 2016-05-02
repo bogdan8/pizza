@@ -31,7 +31,31 @@
     </div>
     <!--/.nav-collapse -->
   </nav>
-
+  <!-- Right panel -->
+  <div class="right-panel">
+    <div>
+      <button class="btn btn-sm btn-danger" onclick="clear_local()">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        Очистити корзину
+      </button>
+    </div>
+    <div>
+      <p class="btn btn-sm btn-default">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+        Кількість піц: <b id="count"></b>
+      </p>
+    </div>
+    <div>
+      <form method="POST" action="/cart">
+        <input id="orders_input" name="orders" type="text" size="13" style="display: none;">
+        <button type="submit" class="btn btn-sm btn-success">
+          <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+          Перейти для заказу
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- /Right panel -->
   <div>
     <% if @error && @error.length > 0 then %>
         <div class="alert alert-danger"><%= @error %></div>

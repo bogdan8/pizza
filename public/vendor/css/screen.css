@@ -1,4 +1,14 @@
-/* line 4, ../sass/screen.scss */
+/* line 5, ../sass/screen.scss */
 .table-column td { text-align: center; }
-/* line 7, ../sass/screen.scss */
+/* line 8, ../sass/screen.scss */
 .table-column th { text-align: center; }
+
+/* line 14, ../sass/screen.scss */
+.list-products img { border-radius: 100px; }
+/* line 17, ../sass/screen.scss */
+.list-products p { text-align: center; }
+/* line 20, ../sass/screen.scss */
+.list-products div { text-align: center; }
+
+/* line 25, ../sass/screen.scss */
+.right-panel { position: fixed; right: 0px; z-index: 2; }

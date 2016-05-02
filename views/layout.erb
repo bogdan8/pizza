@@ -8,6 +8,7 @@
   <script src="/vendor/jquery-1.9.1.min.js"></script>
   <script src="/my.js"></script>
   <link href="/vendor/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
 <div class="container">
@@ -26,6 +27,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="/">Головна</a></li>
+        <li><a href="/about">Про нас</a></li>
         <li><a href="/admin_new">Додати піцу</a></li>
       </ul>
     </div>
@@ -56,7 +58,7 @@
     </div>
   </div>
   <!-- /Right panel -->
-  <div>
+  <div class="body-center">
     <% if @error && @error.length > 0 then %>
         <div class="alert alert-danger"><%= @error %></div>
     <% end %>

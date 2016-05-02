@@ -12,3 +12,6 @@
 
 /* line 25, ../sass/screen.scss */
 .right-panel { position: fixed; right: 0px; z-index: 2; }
+
+/* line 31, ../sass/screen.scss */
+.body-center { z-index: 1; position: absolute; }

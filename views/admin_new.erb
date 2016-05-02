@@ -1,45 +1,67 @@
 <div class="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<form action="/admin_new" method="POST">
-				<div class="form-group">
-					<label>Назва піци</label>
-					<input name="product[title]" type="text" class="form-control" placeholder="Назва піци"></input>
-				</div>
-				<div class="form-group">
-					<label>Опис</label>
-					<input name="product[description]" type="text" class="form-control" placeholder="Опис"></input>
-				</div>
-				<div class="form-group">
-					<label>Ціна</label>
-					<input name="product[price]" type="text" class="form-control" placeholder="Ціна"></input>
-				</div>
-				<div class="form-group">
-					<label>Розмір</label>
-					<input name="product[size]" type="text" class="form-control" placeholder="Розмір"></input>
-				</div>
-				<div class="form-group">
-					<label class="checkbox-inline">
-					<input type="hidden" name="product[is_spicy]" value="0" />
-					<input name="product[is_spicy]" type="checkbox" value="1" placeholder="Гостра?"></input>
-					Гостра?</label>
-				</div>
-				<div class="form-group">
-					<label class="checkbox-inline">
-					<input type="hidden" name="product[is_spicy]" value="0" />
-					<input name="product[is_veg]" type="checkbox" value="1" placeholder="Вегетеріанська?"></input>Вегетеріанська?</label>
-				</div>
-				<div class="form-group">
-					<label class="checkbox-inline">
-					<input type="hidden" name="product[is_spicy]" value="0" />
-					<input name="product[is_best_offer]" type="checkbox" value="1" placeholder="Найкраща?"></input>Найкраща?</label>
-				</div>
-				<div class="form-group">
-					<label>Посилання на фото піци</label>
-					<textarea name="product[path_to_image]" type="text" class="form-control" placeholder="Посилання"></textarea>
-				</div>
-				<button type="submit" class="btn btn-success btn-lg">Додати</button>
-			</form>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-lg-12">
+      <form action="/admin_new" method="POST">
+        <div class="form-group">
+          <label>Назва піци</label>
+
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-font" aria-hidden="true"></i></div>
+            <input name="product[title]" type="text" class="form-control" placeholder="Назва піци">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Опис</label>
+
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-font" aria-hidden="true"></i></div>
+            <input name="product[description]" type="text" class="form-control" placeholder="Опис">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Ціна</label>
+
+          <div class="input-group">
+            <div class="input-group-addon">₴</div>
+            <input name="product[price]" type="text" class="form-control" placeholder="Ціна">
+            <div class="input-group-addon">.00</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Розмір</label>
+
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>
+            <input name="product[size]" type="text" class="form-control" placeholder="Розмір">
+            <div class="input-group-addon">.см</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline">
+            <input type="hidden" name="product[is_spicy]" value="0"/>
+            <input name="product[is_spicy]" type="checkbox" value="1" placeholder="Гостра?">
+            Гостра?</label>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline">
+            <input type="hidden" name="product[is_spicy]" value="0"/>
+            <input name="product[is_veg]" type="checkbox" value="1" placeholder="Вегетеріанська?">Вегетеріанська?</label>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline">
+            <input type="hidden" name="product[is_spicy]" value="0"/>
+            <input name="product[is_best_offer]" type="checkbox" value="1" placeholder="Найкраща?">Популярна?</label>
+        </div>
+        <div class="form-group">
+          <label>Посилання на фото піци</label>
+
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></div>
+            <textarea name="product[path_to_image]" class="form-control" placeholder="Посилання"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg">Додати</button>
+      </form>
+    </div>
+  </div>
 </div>

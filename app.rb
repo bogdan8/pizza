@@ -13,9 +13,17 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Product < ActiveRecord::Base
+  validates :title, presence: true , length: {minimum: 2 , maximum:50}
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :size, presence: true
+  validates :path_to_image, presence: true
 end
 
 class Order < ActiveRecord::Base
+  validates :name, presence: true , length: {minimum: 2 , maximum:50}
+  validates :phone, presence: true
+  validates :address, presence: true
 end
 
 get '/' do
@@ -39,9 +47,13 @@ post '/cart' do
 end
 
 post '/place_order' do
-  @order = Order.create params[:order]
-
-  erb :order_placed
+  @order = Order.new params[:order]
+  if @order.save
+    erb :order_placed
+  else
+    @error = @order.errors.full_messages
+    erb :cart
+  end
 end
 
 get '/admin_new' do
@@ -49,9 +61,13 @@ get '/admin_new' do
 end
 
 post '/admin_new' do
-  @product = Product.create params[:product]
-
-  erb "Дякуєм за замовлення"
+  @product = Product.new params[:product]
+  if @product.save
+    erb "Дякуєм за замовлення"
+  else
+    @error = @product.errors.full_messages
+    erb :admin_new
+  end
 end
 
 def perse_orders_input orders_input

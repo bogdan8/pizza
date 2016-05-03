@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430111158) do
+ActiveRecord::Schema.define(version: 20160503075854) do
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text     "name",         limit: 65535
+    t.text     "address",      limit: 65535
+    t.text     "descriptions", limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.text     "orders_input", limit: 65535
@@ -27,9 +35,9 @@ ActiveRecord::Schema.define(version: 20160430111158) do
     t.text     "description",   limit: 65535
     t.decimal  "price",                       precision: 10
     t.decimal  "size",                        precision: 10
-    t.boolean  "is_spicy"
-    t.boolean  "is_veg"
-    t.boolean  "is_best_offer"
+    t.boolean  "is_spicy",                                   default: false
+    t.boolean  "is_veg",                                     default: false
+    t.boolean  "is_best_offer",                              default: false
     t.string   "path_to_image", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"

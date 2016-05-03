@@ -26,6 +26,9 @@ class Order < ActiveRecord::Base
   validates :address, presence: true
 end
 
+class Feedback < ActiveRecord::Base
+end
+
 get '/' do
   @product = Product.all
   erb :index
@@ -67,6 +70,19 @@ post '/admin_new' do
   else
     @error = @product.errors.full_messages
     erb :admin_new
+  end
+end
+
+get '/feedbacks' do
+  erb :feedbacks
+end
+
+post '/feedbacks' do
+  @feedback = Feedback.new params[:feedbacks]
+  if @feedback.save
+    erb "Дякуєм ми переглянемо ваш запит і звяжимось з вами"
+  else
+    erb "Вникла помилка"
   end
 end
 

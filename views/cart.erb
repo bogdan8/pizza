@@ -34,10 +34,10 @@
         <% else %>
             <td>Так</td>
         <% end %>
-        <td><%= item[0].price %></td>
+        <td><%= price = item[0].price.to_i *  item[1].to_i %></td>
         <td><%= item[1] %></td>
       </tr>
-      <% total_price += item[0].price.to_i %>
+      <% total_price += price  %>
       <% total_pizza += item[1].to_i %>
   <% end %>
   <tr>
